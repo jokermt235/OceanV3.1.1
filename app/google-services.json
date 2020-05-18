@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "707236429121",
+    "firebase_url": "https://oceanv311.firebaseio.com",
+    "project_id": "oceanv311",
+    "storage_bucket": "oceanv311.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707236429121:android:099dfc00da89b0cbc2f5c0",
+        "android_client_info": {
+          "package_name": "com.example.oceanv311"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707236429121-frtgrq20ohlgi218nlv99d57d57s75ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5xNjQ3Rzy4ZBKkQ465pKWBMtfu0ysKoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707236429121-frtgrq20ohlgi218nlv99d57d57s75ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
