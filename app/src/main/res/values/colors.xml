@@ -5,4 +5,8 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorText">#0F4C81</color>
     <color name="colorDarkText">#000000</color>
+    <color name="colorLoginLabel">#47A5F2</color>
+    <color name="colorButton">#0F4C81</color>
+    <color name="colorLightText">#FFFFFF</color>
+    <color name="coloMutedText">#78000000</color>
 </resources>

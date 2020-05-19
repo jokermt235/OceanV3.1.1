@@ -2,4 +2,9 @@
     <string name="app_name">OceanV3.1.1</string>
     <string name="appName">Ocean</string>
     <string name="market">Садовод</string>
+    <string name="login_title">Вход</string>
+    <string name="login_description">Введите номер телефона, чтобы войти или зарегистрироваться</string>
+    <string name="login_phone_number_label">Номер телефона</string>
+    <string name="login_continue_btn_text">Продолжить</string>
+    <string name="login_user_agreement_title">При входе или регистрации вы принимаете условия пользовательского соглашения.</string>
 </resources>
