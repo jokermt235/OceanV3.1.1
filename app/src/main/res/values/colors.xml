@@ -9,4 +9,5 @@
     <color name="colorButton">#0F4C81</color>
     <color name="colorLightText">#FFFFFF</color>
     <color name="coloMutedText">#78000000</color>
+    <color name="colorMutedLink">#757575</color>
 </resources>

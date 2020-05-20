@@ -7,4 +7,6 @@
     <string name="login_phone_number_label">Номер телефона</string>
     <string name="login_continue_btn_text">Продолжить</string>
     <string name="login_user_agreement_title">При входе или регистрации вы принимаете условия пользовательского соглашения.</string>
+    <string name="code_title">Код подтверждения</string>
+    <string name="code_info">На номер %1$s отправлен код подтверждения в виде SMS-сообщения</string>
 </resources>
