@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/user_welcome_title"
             android:textColor="@color/colorDarkText"
@@ -59,7 +59,8 @@
             android:ems="25"
             android:hint="basira_shop"
             android:inputType="textPersonName"
-            android:textColor="@color/colorDarkText" />
+            android:textColor="@color/colorDarkText"
+            android:textColorHint="@color/colorDarkText" />
 
         <TextView
             android:id="@+id/userMarketLabel"
@@ -69,16 +70,164 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="14dp"
-            android:text="@string/user_market_label" />
+            android:text="@string/user_market_label"
+            android:textSize="12sp" />
 
         <Spinner
             android:id="@+id/userMarket"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="36dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="7dp"
             android:layout_marginEnd="16dp"
-            android:background="?android:attr/actionModeFindDrawable"
-            android:backgroundTintMode="multiply" />
+            android:background="@drawable/spiner_icon_background"
+            android:backgroundTintMode="src_in" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/userRowLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_row_label"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/userRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:ems="10"
+                    android:hint="22"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/colorDarkText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="7dp">
+
+                <TextView
+                    android:id="@+id/userPlaceLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_place_label"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/userPlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:ems="10"
+                    android:hint="87"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/colorDarkText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="7dp">
+
+                <TextView
+                    android:id="@+id/userFloorLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_floor"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/userFloor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:ems="10"
+                    android:hint="1"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/colorDarkText" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/userWAPhoneLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_wa_phone_label"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/userWAPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:ems="10"
+                    android:hint="+7 (495) 001-00-01"
+                    android:inputType="phone"
+                    android:textColorHint="@color/colorDarkText" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/userTGPhoneLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_tg_phone_label"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/userTGPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:ems="10"
+                    android:hint="+7 (495) 001-00-01"
+                    android:inputType="phone"
+                    android:textColorHint="@color/colorDarkText" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/userSaveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_shadow"
+                android:backgroundTintMode="src_atop"
+                android:text="@string/login_continue_btn_text"
+                android:textAllCaps="false"
+                android:textColor="@color/colorLightText"
+                android:textSize="16sp" />
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

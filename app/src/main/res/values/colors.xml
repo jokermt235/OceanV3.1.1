@@ -10,4 +10,6 @@
     <color name="colorLightText">#FFFFFF</color>
     <color name="coloMutedText">#78000000</color>
     <color name="colorMutedLink">#757575</color>
+    <color name="colorToolbar">#F4F5F6</color>
+    <color name="colorToolbarTitle">#8A000000</color>
 </resources>

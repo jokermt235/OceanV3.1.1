@@ -6,8 +6,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.oceanv311.Callbacks.OnFilterResult;
 import com.example.oceanv311.Callbacks.PhoneVerificationCallback;
 import com.example.oceanv311.View.FeedActivity;
+import com.example.oceanv311.View.UserActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -17,6 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class Auth {
@@ -27,7 +31,7 @@ public class Auth {
                 60,                 // Timeout duration
                 TimeUnit.SECONDS,   // Unit of timeout
                 activity,               // Activity (for callback binding)
-                new PhoneVerificationCallback(activity));        // OnVerificationStateChangedCallbacks
+                new PhoneVerificationCallback(activity, phoneNumber));        // OnVerificationStateChangedCallbacks
     }
 
     public static void signUp(PhoneAuthCredential credential ){
@@ -51,10 +55,19 @@ public class Auth {
                     // Sign in success, update UI with the signed-in user's information
                     FirebaseUser user = task.getResult().getUser();
                     Toast.makeText(activity.getApplicationContext(), user.getUid(), Toast.LENGTH_LONG).show();
-                    if(true) {
-                        activity.startActivity(new Intent(activity.getApplicationContext(), FeedActivity.class));
-                        activity.finish();
-                    }
+                    SimpleLoader.filter("user", new OnFilterResult(){
+                        @Override
+                        public void onResult(ArrayList<Map<String, Object>> arrayList) {
+                            super.onResult(arrayList);
+                            if(!arrayList.isEmpty()){
+                                activity.startActivity(new Intent(activity.getApplicationContext(), FeedActivity.class));
+                                activity.finish();
+                            }else{
+                                activity.startActivity(new Intent(activity.getApplicationContext(), UserActivity.class));
+                                activity.finish();
+                            }
+                        }
+                    });
                     // ...
                 } else {
                     // Sign in failed, display a message and update the UI

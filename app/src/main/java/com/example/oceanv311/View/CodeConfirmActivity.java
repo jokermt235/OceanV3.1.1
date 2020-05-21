@@ -15,6 +15,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 public class CodeConfirmActivity extends AppCompatActivity {
 
+    private TextView codeConfirmLabel;
     private TextView sendCodeBtn;
     private EditText codeConfirm1;
     private EditText codeConfirm2;
@@ -23,11 +24,14 @@ public class CodeConfirmActivity extends AppCompatActivity {
     private EditText codeConfirm5;
     private EditText codeConfirm6;
     private String verificationId;
+    private String phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code_confirm);
+        phone = getIntent().getStringExtra("phone");
+        //Init codeConfirm EditText
         sendCodeBtn = findViewById(R.id.codeConfirmLogin);
         codeConfirm1 = findViewById(R.id.codeConfirmCode1);
         codeConfirm2 = findViewById(R.id.codeConfirmCode2);
@@ -35,6 +39,11 @@ public class CodeConfirmActivity extends AppCompatActivity {
         codeConfirm4 = findViewById(R.id.codeConfirmCode4);
         codeConfirm5 = findViewById(R.id.codeConfirmCode5);
         codeConfirm6 = findViewById(R.id.codeConfirmCode6);
+
+        //Init codeConfirmLabel TextView
+
+        codeConfirmLabel = findViewById(R.id.codeConfirmLabel);
+        codeConfirmLabel.setText(String.format(getResources().getString(R.string.code_info), phone));
 
         verificationId = getIntent().getStringExtra("verificationId");
 

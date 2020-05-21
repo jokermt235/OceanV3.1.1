@@ -65,7 +65,6 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/button_shadow"
             android:backgroundTintMode="src_atop"
-            android:capitalize="none"
             android:text="@string/login_continue_btn_text"
             android:textAllCaps="false"
             android:textColor="@color/colorLightText"

@@ -63,7 +63,8 @@
                     android:hint=""
                     android:inputType="number"
                     android:maxEms="1"
-                    android:minEms="1" />
+                    android:minEms="1"
+                    android:nextFocusRight="@id/codeConfirmCode2" />
 
                 <EditText
                     android:id="@+id/codeConfirmCode2"
@@ -79,7 +80,8 @@
                     android:maxWidth="40dp"
                     android:maxEms="1"
                     android:minWidth="40dp"
-                    android:minEms="1" />
+                    android:minEms="1"
+                    android:nextFocusRight="@id/codeConfirmCode3" />
 
                 <EditText
                     android:id="@+id/codeConfirmCode3"
@@ -95,7 +97,8 @@
                     android:maxWidth="40dp"
                     android:maxEms="1"
                     android:minWidth="40dp"
-                    android:minEms="1" />
+                    android:minEms="1"
+                    android:nextFocusRight="@id/codeConfirmCode4" />
 
                 <EditText
                     android:id="@+id/codeConfirmCode4"
@@ -110,7 +113,8 @@
                     android:maxWidth="40dp"
                     android:maxEms="1"
                     android:minWidth="40dp"
-                    android:minEms="1" />
+                    android:minEms="1"
+                    android:nextFocusRight="@id/codeConfirmCode5" />
 
                 <EditText
                     android:id="@+id/codeConfirmCode5"
@@ -126,7 +130,8 @@
                     android:maxWidth="40dp"
                     android:maxEms="1"
                     android:minWidth="40dp"
-                    android:minEms="1" />
+                    android:minEms="1"
+                    android:nextFocusRight="@id/codeConfirmCode6" />
 
                 <EditText
                     android:id="@+id/codeConfirmCode6"

@@ -15,8 +15,10 @@ import com.google.firebase.auth.PhoneAuthProvider;
 public class PhoneVerificationCallback extends PhoneAuthProvider.OnVerificationStateChangedCallbacks {
     private  AppCompatActivity activity;
     private  String verificationId;
-    public PhoneVerificationCallback(AppCompatActivity activity){
+    private  String phone;
+    public PhoneVerificationCallback(AppCompatActivity activity, String phone){
         this.activity = activity;
+        this.phone = phone;
     }
     @Override
     public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
@@ -34,6 +36,7 @@ public class PhoneVerificationCallback extends PhoneAuthProvider.OnVerificationS
                            @NonNull PhoneAuthProvider.ForceResendingToken token) {
         Intent intent = new Intent(activity, CodeConfirmActivity.class);
         intent.putExtra("verificationId", verificationId);
+        intent.putExtra("phone", phone);
         activity.startActivity(intent);
         this.verificationId = verificationId;
         activity.finish();

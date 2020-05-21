@@ -19,6 +19,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
 
@@ -30,6 +31,7 @@ public class SimpleLoader {
         if(user != null) {
             data.put("phone",user.getPhoneNumber());
             data.put("name",data.get("name"));
+            data.put("added", new Date().getTime());
             data.put("uid", UUID.randomUUID().toString());
             db.collection(collection)
                     .add(data)
@@ -63,6 +65,7 @@ public class SimpleLoader {
                         QuerySnapshot querySnapshot = task.getResult();
                         for (QueryDocumentSnapshot document : querySnapshot) {
                             arrayList.add(document.getData());
+                            Log.d(TAG, document.getData().toString());
                         }
                         result.onResult(arrayList);
                     } else {

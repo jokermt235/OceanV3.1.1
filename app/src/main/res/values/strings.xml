@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">OceanV3.1.1</string>
-    <string name="appName">Ocean</string>
+    <string name="appName">OCEAN</string>
     <string name="market">Садовод</string>
     <string name="login_title">Вход</string>
     <string name="login_description">Введите номер телефона, чтобы войти или зарегистрироваться</string>
@@ -13,4 +13,9 @@
     <string name="user_name_label">Как называется Ваш магазин?</string>
     <string name="user_name_input_label">Название магазина</string>
     <string name="user_market_label">Торговая точка</string>
+    <string name="user_row_label">Ряд</string>
+    <string name="user_place_label">Павильон</string>
+    <string name="user_floor">Этаж</string>
+    <string name="user_wa_phone_label">Номер WhatsApp</string>
+    <string name="user_tg_phone_label">Номер Telegram</string>
 </resources>
