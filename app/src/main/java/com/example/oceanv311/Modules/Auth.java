@@ -1,11 +1,13 @@
 package com.example.oceanv311.Modules;
 
+import android.content.Intent;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.oceanv311.Callbacks.PhoneVerificationCallback;
+import com.example.oceanv311.View.FeedActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -49,6 +51,10 @@ public class Auth {
                     // Sign in success, update UI with the signed-in user's information
                     FirebaseUser user = task.getResult().getUser();
                     Toast.makeText(activity.getApplicationContext(), user.getUid(), Toast.LENGTH_LONG).show();
+                    if(true) {
+                        activity.startActivity(new Intent(activity.getApplicationContext(), FeedActivity.class));
+                        activity.finish();
+                    }
                     // ...
                 } else {
                     // Sign in failed, display a message and update the UI

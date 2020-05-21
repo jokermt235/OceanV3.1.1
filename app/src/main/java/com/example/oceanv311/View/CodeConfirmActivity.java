@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.oceanv311.Modules.Auth;
 import com.example.oceanv311.R;
@@ -14,7 +15,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 public class CodeConfirmActivity extends AppCompatActivity {
 
-    private Button sendCodeBtn;
+    private TextView sendCodeBtn;
     private EditText codeConfirm1;
     private EditText codeConfirm2;
     private EditText codeConfirm3;
@@ -40,7 +41,14 @@ public class CodeConfirmActivity extends AppCompatActivity {
         sendCodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationId, codeConfirm1.getText().toString());
+                String codeConfirm = codeConfirm1.getText().toString() +
+                        codeConfirm2.getText().toString() +
+                        codeConfirm3.getText().toString() +
+                        codeConfirm4.getText().toString() +
+                        codeConfirm5.getText().toString() +
+                        codeConfirm6.getText().toString();
+
+                PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationId, codeConfirm);
                 Auth.signInWithPhoneCredentials(CodeConfirmActivity.this, phoneAuthCredential);
             }
         });

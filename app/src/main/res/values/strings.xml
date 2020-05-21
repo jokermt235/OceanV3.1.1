@@ -9,4 +9,8 @@
     <string name="login_user_agreement_title">При входе или регистрации вы принимаете условия пользовательского соглашения.</string>
     <string name="code_title">Код подтверждения</string>
     <string name="code_info">На номер %1$s отправлен код подтверждения в виде SMS-сообщения</string>
+    <string name="user_welcome_title">Добро пожаловать в Ocean!</string>
+    <string name="user_name_label">Как называется Ваш магазин?</string>
+    <string name="user_name_input_label">Название магазина</string>
+    <string name="user_market_label">Торговая точка</string>
 </resources>
