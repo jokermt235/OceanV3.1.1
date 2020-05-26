@@ -12,8 +12,8 @@ import androidx.annotation.Nullable;
 import com.example.oceanv311.R;
 
 public class SimpleBottomMenu extends View{
-    public SimpleBottomMenu(Context context) {
-        super(context);
+    public SimpleBottomMenu(Context context, AttributeSet attrs) {
+        super(context,attrs);
     }
 
 }

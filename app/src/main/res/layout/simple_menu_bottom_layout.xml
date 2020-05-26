@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/feedBottomMenu"
+    android:id="@+id/SimpleBottomMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorToolbar"
@@ -13,7 +13,7 @@
     app:layout_constraintTop_toTopOf="parent">
 
     <ImageButton
-        android:id="@+id/feedBottomMenuHomeBtn"
+        android:id="@+id/SimpleBottomMenuHomeBtn"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_weight="1"
@@ -23,7 +23,7 @@
         android:src="@mipmap/ic_feed_bottom_menu_home_icon_foreground" />
 
     <ImageButton
-        android:id="@+id/feedBottomMenuSearchBtn"
+        android:id="@+id/SimpleBottomMenuSearchBtn"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_weight="1"
@@ -33,7 +33,7 @@
         android:src="@mipmap/ic_feed_bottom_menu_search_icon_foreground" />
 
     <ImageButton
-        android:id="@+id/feedBottomMenuAddBtn"
+        android:id="@+id/SimpleBottomMenuAddBtn"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_weight="1"
@@ -43,7 +43,7 @@
         android:src="@mipmap/ic_feed_bottom_menu_add_icon_foreground" />
 
     <ImageButton
-        android:id="@+id/feedBottomMenuSavesBtn"
+        android:id="@+id/SimpleBottomMenuSavesBtn"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_weight="1"
@@ -53,7 +53,7 @@
         android:src="@mipmap/ic_feed_bottom_menu_saves_icon_foreground" />
 
     <ImageButton
-        android:id="@+id/feedBottomMenuProfileBtn"
+        android:id="@+id/SimpleBottomMenuProfileBtn"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_weight="1"
