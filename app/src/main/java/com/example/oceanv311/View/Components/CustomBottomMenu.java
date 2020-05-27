@@ -53,7 +53,6 @@ public class CustomBottomMenu {
                 if(!activity.NAME.equals("ChooseImageActivity"))
                 {
                     activity.startActivity(new Intent(context, ChooseImageActivity.class));
-                    activity.finish();
                 }
             }
         });

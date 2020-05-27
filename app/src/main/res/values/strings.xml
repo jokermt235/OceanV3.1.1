@@ -18,4 +18,14 @@
     <string name="user_floor">Этаж</string>
     <string name="user_wa_phone_label">Номер WhatsApp</string>
     <string name="user_tg_phone_label">Номер Telegram</string>
+    <string name="choose_image_toolbar_title">Добавить товар в Ocean</string>
+    <string name="choose_image_name_label">Наименование</string>
+    <string name="choose_image_category_label">Категории</string>
+    <string name="choose_image_price_give_label">Цена даю</string>
+    <string name="choose_image_price_sale_label">Цена продаю</string>
+    <string name="choose_image_cloth_label">Ткань</string>
+    <string name="choose_image_sizes_label">Размеры</string>
+    <string name="choose_image_market_photo_label">Фото с рынка</string>
+    <string name="app_save_text">Сохранить</string>
+    <string name="choose_image_sale_place_label">Торговая точка</string>
 </resources>
