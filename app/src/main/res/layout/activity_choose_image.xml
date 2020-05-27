@@ -7,6 +7,7 @@
     tools:context=".View.ChooseImageActivity">
 
     <LinearLayout
+        android:id="@+id/chooseImageLayoutMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -60,7 +61,7 @@
                     android:text="@string/choose_image_category_label"
                     android:textSize="12sp" />
 
-                <Spinner
+                <EditText
                     android:id="@+id/chooseImageCategory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -181,14 +182,16 @@
             </LinearLayout>
         </ScrollView>
 
-        <Button
-            android:id="@+id/chooseImageSaveBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/colorButton"
-            android:text="@string/app_save_text"
-            android:textAllCaps="false"
-            android:textColor="@color/colorLightText" />
+
     </LinearLayout>
+    <Button
+        android:id="@+id/chooseImageSaveBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorButton"
+        android:text="@string/app_save_text"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/colorLightText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
