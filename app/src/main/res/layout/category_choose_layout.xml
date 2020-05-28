@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip">
+
+        <ImageButton
+            android:id="@+id/newYieldFormCloseBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
-            android:paddingTop="10dip"
-            android:paddingBottom="10dip"
-            android:orientation="horizontal">
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="10dip"
+            android:background="@color/colorToolbar"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
 
-            <ImageButton
-                android:id="@+id/newYieldFormCloseBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dip"/>
-        </LinearLayout>
-
-        <ListView
-            android:id="@+id/categoryChooseList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </ListView>
+        <TextView
+            android:id="@+id/chooseCategoryToolbarLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="@string/choose_category"
+            android:textColor="@color/colorDarkText"
+            android:textSize="18sp" />
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/categoryChooseList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,4 +62,4 @@
             android:text="@string/apply"
             android:textColor="@color/colorLightText" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
