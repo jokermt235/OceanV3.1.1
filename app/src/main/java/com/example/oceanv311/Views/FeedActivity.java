@@ -1,6 +1,5 @@
-package com.example.oceanv311.View;
+package com.example.oceanv311.Views;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -8,7 +7,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.example.oceanv311.R;
-import com.example.oceanv311.View.Components.CustomBottomMenu;
+import com.example.oceanv311.Views.Components.CustomBottomMenu;
 
 public class FeedActivity extends AppActivity {
     public static String NAME = "FeedActivity";

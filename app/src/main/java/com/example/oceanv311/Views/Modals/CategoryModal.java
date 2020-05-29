@@ -1,4 +1,4 @@
-package com.example.oceanv311.View.Modals;
+package com.example.oceanv311.Views.Modals;
 
 import android.util.Log;
 import android.view.LayoutInflater;

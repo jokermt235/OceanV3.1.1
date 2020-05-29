@@ -1,7 +1,6 @@
-package com.example.oceanv311.View;
+package com.example.oceanv311.Views;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.oceanv311.R;
-import com.example.oceanv311.View.Modals.CategoryModal;
 
 public class ChooseImageActivity extends AppActivity {
 
@@ -31,7 +29,7 @@ public class ChooseImageActivity extends AppActivity {
             }
         });
         Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
         intent.setType("image/*");
         startActivityForResult(Intent.createChooser(intent,"Select Picture"), GALLERY_REQUEST_CODE);
     }

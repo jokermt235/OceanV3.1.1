@@ -31,4 +31,5 @@
     <string name="discard">Сбросить</string>
     <string name="apply">Применить</string>
     <string name="choose_category">Выбрать категории</string>
+    <string name="category_choose_item_default_text">#платьяотдаши</string>
 </resources>

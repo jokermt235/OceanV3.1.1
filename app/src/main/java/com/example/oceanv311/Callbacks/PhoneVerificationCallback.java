@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.oceanv311.Modules.Auth;
-import com.example.oceanv311.View.CodeConfirmActivity;
+import com.example.oceanv311.Views.CodeConfirmActivity;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;

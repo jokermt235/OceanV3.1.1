@@ -1,4 +1,4 @@
-package com.example.oceanv311.View;
+package com.example.oceanv311.Views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +11,6 @@ import android.widget.EditText;
 import com.example.oceanv311.Callbacks.OnSavedResult;
 import com.example.oceanv311.Modules.SimpleLoader;
 import com.example.oceanv311.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.HashMap;
 import java.util.Map;

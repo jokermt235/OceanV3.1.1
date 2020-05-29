@@ -1,4 +1,4 @@
-package com.example.oceanv311.View.Components;
+package com.example.oceanv311.Views.Components;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.oceanv311.R;
-import com.example.oceanv311.View.AppActivity;
-import com.example.oceanv311.View.ChooseImageActivity;
-import com.example.oceanv311.View.FeedActivity;
+import com.example.oceanv311.Views.AppActivity;
+import com.example.oceanv311.Views.ChooseImageActivity;
+import com.example.oceanv311.Views.FeedActivity;
 
 public class CustomBottomMenu {
     private  AppCompatActivity activity;

@@ -1,4 +1,4 @@
-package com.example.oceanv311.View;
+package com.example.oceanv311.Views;
 
 import androidx.appcompat.app.AppCompatActivity;
 

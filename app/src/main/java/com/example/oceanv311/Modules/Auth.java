@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.oceanv311.Callbacks.OnFilterResult;
 import com.example.oceanv311.Callbacks.PhoneVerificationCallback;
-import com.example.oceanv311.View.FeedActivity;
-import com.example.oceanv311.View.UserActivity;
+import com.example.oceanv311.Views.FeedActivity;
+import com.example.oceanv311.Views.UserActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

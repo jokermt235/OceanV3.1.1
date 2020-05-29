@@ -1,10 +1,9 @@
-package com.example.oceanv311.View;
+package com.example.oceanv311.Views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 

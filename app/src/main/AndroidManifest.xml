@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.CategoryChooseActivity"></activity>
-        <activity android:name=".View.ChooseImageActivity" />
-        <activity android:name=".View.PostFormActivity" />
-        <activity android:name=".View.UserActivity" />
-        <activity android:name=".View.FeedActivity" />
-        <activity android:name=".View.LoginActivity" />
-        <activity android:name=".View.CodeConfirmActivity" />
-        <activity android:name=".View.MainActivity">
+        <activity android:name=".Views.CategoryChooseActivity"></activity>
+        <activity android:name=".Views.ChooseImageActivity" />
+        <activity android:name=".Views.PostFormActivity" />
+        <activity android:name=".Views.UserActivity" />
+        <activity android:name=".Views.FeedActivity" />
+        <activity android:name=".Views.LoginActivity" />
+        <activity android:name=".Views.CodeConfirmActivity" />
+        <activity android:name=".Views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
