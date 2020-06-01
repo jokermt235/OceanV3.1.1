@@ -32,4 +32,5 @@
     <string name="apply">Применить</string>
     <string name="choose_category">Выбрать категории</string>
     <string name="category_choose_item_default_text">#платьяотдаши</string>
+    <string name="size_choose_toolbar_title">Выбрать размеры</string>
 </resources>

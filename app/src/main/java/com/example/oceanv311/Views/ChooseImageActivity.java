@@ -17,7 +17,9 @@ public class ChooseImageActivity extends AppActivity {
     public static String NAME = "ChooseImageActivity";
     private static int GALLERY_REQUEST_CODE= 1;
     private static int CATEGORY_REQUEST_CODE = 2;
+    private static int SIZE_REQUEST_CODE = 3;
     private EditText category;
+    private EditText sizes;
     private ChooseImageActivity activity = this;
 
     @Override
@@ -30,6 +32,13 @@ public class ChooseImageActivity extends AppActivity {
             @Override
             public void onClick(View v) {
                  startActivityForResult(new Intent(getApplicationContext(), CategoryChooseActivity.class), CATEGORY_REQUEST_CODE);
+            }
+        });
+        sizes = findViewById(R.id.chooseImageSizes);
+        sizes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(getApplicationContext(), SizeChooseActivity.class), SIZE_REQUEST_CODE);
             }
         });
         Intent intent = new Intent();
