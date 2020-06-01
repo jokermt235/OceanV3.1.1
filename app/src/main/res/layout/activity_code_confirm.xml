@@ -50,104 +50,22 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="109dp"
                 android:layout_marginEnd="16dp"
-                android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/codeConfirmCode1"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/colorDarkText"
-                    android:ems="1"
-                    android:gravity="center"
-                    android:hint=""
-                    android:inputType="number"
-                    android:maxEms="1"
-                    android:minEms="1"
-                    android:nextFocusRight="@id/codeConfirmCode2" />
+                    android:id="@+id/codeConfirmCode"
+                    android:layout_width="168dp"
+                    android:layout_height="48dp"
+                    android:background="@color/colorToolbar"
+                    android:ems="6"
+                    android:hint="123456"
+                    android:inputType="number|textPassword"
+                    android:letterSpacing="1"
+                    android:maxEms="6"
+                    android:maxLength="6"
+                    android:minEms="6"
+                    android:password="false" />
 
-                <EditText
-                    android:id="@+id/codeConfirmCode2"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="1dp"
-                    android:width="40dp"
-                    android:backgroundTint="@color/colorDarkText"
-                    android:ems="1"
-                    android:gravity="center"
-                    android:hint=""
-                    android:inputType="number"
-                    android:maxWidth="40dp"
-                    android:maxEms="1"
-                    android:minWidth="40dp"
-                    android:minEms="1"
-                    android:nextFocusRight="@id/codeConfirmCode3" />
-
-                <EditText
-                    android:id="@+id/codeConfirmCode3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:width="40dp"
-                    android:backgroundTint="@color/colorDarkText"
-                    android:ems="1"
-                    android:gravity="center"
-                    android:hint=""
-                    android:inputType="number"
-                    android:maxWidth="40dp"
-                    android:maxEms="1"
-                    android:minWidth="40dp"
-                    android:minEms="1"
-                    android:nextFocusRight="@id/codeConfirmCode4" />
-
-                <EditText
-                    android:id="@+id/codeConfirmCode4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:backgroundTint="@color/colorDarkText"
-                    android:ems="1"
-                    android:gravity="center"
-                    android:hint=""
-                    android:inputType="number"
-                    android:maxWidth="40dp"
-                    android:maxEms="1"
-                    android:minWidth="40dp"
-                    android:minEms="1"
-                    android:nextFocusRight="@id/codeConfirmCode5" />
-
-                <EditText
-                    android:id="@+id/codeConfirmCode5"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:width="40dp"
-                    android:backgroundTint="@color/colorDarkText"
-                    android:ems="1"
-                    android:gravity="center"
-                    android:hint=""
-                    android:inputType="number"
-                    android:maxWidth="40dp"
-                    android:maxEms="1"
-                    android:minWidth="40dp"
-                    android:minEms="1"
-                    android:nextFocusRight="@id/codeConfirmCode6" />
-
-                <EditText
-                    android:id="@+id/codeConfirmCode6"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:width="40dp"
-                    android:backgroundTint="@color/colorDarkText"
-                    android:ems="1"
-                    android:gravity="center"
-                    android:hint=""
-                    android:inputType="number"
-                    android:maxWidth="40dp"
-                    android:maxEms="1"
-                    android:minWidth="40dp"
-                    android:minEms="1" />
             </LinearLayout>
 
             <TextView

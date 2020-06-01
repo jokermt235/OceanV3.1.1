@@ -16,12 +16,7 @@ public class CodeConfirmActivity extends AppCompatActivity {
 
     private TextView codeConfirmLabel;
     private TextView sendCodeBtn;
-    private EditText codeConfirm1;
-    private EditText codeConfirm2;
-    private EditText codeConfirm3;
-    private EditText codeConfirm4;
-    private EditText codeConfirm5;
-    private EditText codeConfirm6;
+    private EditText codeConfirm;
     private String verificationId;
     private String phone;
 
@@ -32,12 +27,7 @@ public class CodeConfirmActivity extends AppCompatActivity {
         phone = getIntent().getStringExtra("phone");
         //Init codeConfirm EditText
         sendCodeBtn = findViewById(R.id.codeConfirmLogin);
-        codeConfirm1 = findViewById(R.id.codeConfirmCode1);
-        codeConfirm2 = findViewById(R.id.codeConfirmCode2);
-        codeConfirm3 = findViewById(R.id.codeConfirmCode3);
-        codeConfirm4 = findViewById(R.id.codeConfirmCode4);
-        codeConfirm5 = findViewById(R.id.codeConfirmCode5);
-        codeConfirm6 = findViewById(R.id.codeConfirmCode6);
+        codeConfirm = findViewById(R.id.codeConfirmCode);
 
         //Init codeConfirmLabel TextView
 
@@ -49,14 +39,9 @@ public class CodeConfirmActivity extends AppCompatActivity {
         sendCodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String codeConfirm = codeConfirm1.getText().toString() +
-                        codeConfirm2.getText().toString() +
-                        codeConfirm3.getText().toString() +
-                        codeConfirm4.getText().toString() +
-                        codeConfirm5.getText().toString() +
-                        codeConfirm6.getText().toString();
+                String codeConfirmString = codeConfirm.getText().toString();
 
-                PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationId, codeConfirm);
+                PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationId, codeConfirmString);
                 Auth.signInWithPhoneCredentials(CodeConfirmActivity.this, phoneAuthCredential);
             }
         });

@@ -34,6 +34,12 @@ public class CategoryChooseActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.categoryChooseProgressBar);
         discardButton = findViewById(R.id.categoryChooseDiscardBtn);
         applyButton   = findViewById(R.id.categoryChooseApplyBtn);
+        applyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         categoryList = findViewById(R.id.categoryChooseList);
         loadLocal();
     }
