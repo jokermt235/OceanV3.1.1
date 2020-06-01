@@ -67,7 +67,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/spiner_icon_background"
-                    android:focusable="false" />
+                    android:focusable="false"
+                    android:inputType="textMultiLine" />
 
 
 

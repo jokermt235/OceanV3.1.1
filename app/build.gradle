@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:21.4.3'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 }
