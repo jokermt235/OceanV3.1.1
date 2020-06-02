@@ -12,6 +12,8 @@ import com.example.oceanv311.R;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.awt.font.TextAttribute;
+
 public class ChooseImageActivity extends AppActivity {
 
     public static String NAME = "ChooseImageActivity";
@@ -59,6 +61,11 @@ public class ChooseImageActivity extends AppActivity {
                 String cats = StringUtils.join(data.getStringArrayExtra("checkedItems"), ',');
                 category.setText(cats);
                 Log.d(NAME, cats);
+            }
+        }
+        if(requestCode == SIZE_REQUEST_CODE){
+            if(data.getStringExtra("checkedItems") != null){
+                sizes.setText(data.getStringExtra("checkedItems"));
             }
         }
     }

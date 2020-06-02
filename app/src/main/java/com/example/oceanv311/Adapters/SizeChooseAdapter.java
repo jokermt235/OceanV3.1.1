@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class SizeChooseAdapter extends RecyclerView.Adapter<SizeChooseAdapter.VH>{
-    private ArrayList<Map<String,Object>> items = new ArrayList<>();
+    private ArrayList<Map<String,Object>> items = new ArrayList();
     private Context context;
     @NonNull
     @Override
@@ -26,8 +26,14 @@ public class SizeChooseAdapter extends RecyclerView.Adapter<SizeChooseAdapter.VH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VH holder, int position) {
+    public void onBindViewHolder(@NonNull VH holder, final int position) {
         holder.checkBox.setText((String)items.get(position).get("name"));
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                items.get(position).put("checked",true);
+            }
+        });
     }
 
     @Override
@@ -35,21 +41,24 @@ public class SizeChooseAdapter extends RecyclerView.Adapter<SizeChooseAdapter.VH
         return items.size();
     }
 
+
+    public ArrayList<Map<String, Object>> getItems(){
+        return items;
+    }
+
     public SizeChooseAdapter(ArrayList<Map<String,Object>> items, Context context){
         this.items = items;
         this.context = context;
     }
 
-    public static class VH extends   RecyclerView.ViewHolder implements CompoundButton.OnCheckedChangeListener {
+    public static class VH extends   RecyclerView.ViewHolder{
         private CheckBox checkBox;
+        private View view;
 
         public VH(View view) {
             super(view);
+            this.view = view;
             this.checkBox = view.findViewById(R.id.sizeChooseListItemCheckbox);
-        }
-
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         }
     }
 }
