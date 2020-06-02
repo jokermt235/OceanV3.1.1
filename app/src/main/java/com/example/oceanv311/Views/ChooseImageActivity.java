@@ -20,6 +20,7 @@ public class ChooseImageActivity extends AppActivity {
     private static int GALLERY_REQUEST_CODE= 1;
     private static int CATEGORY_REQUEST_CODE = 2;
     private static int SIZE_REQUEST_CODE = 3;
+    private static int MIMAGE_REQUEST_CODE = 4;
     private EditText category;
     private EditText sizes;
     private ChooseImageActivity activity = this;

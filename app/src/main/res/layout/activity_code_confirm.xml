@@ -58,7 +58,7 @@
                     android:layout_height="48dp"
                     android:background="@color/colorToolbar"
                     android:ems="6"
-                    android:hint="123456"
+                    android:hint="000000"
                     android:inputType="number|textPassword"
                     android:letterSpacing="1"
                     android:maxEms="6"

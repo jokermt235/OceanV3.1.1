@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Views.SizeChooseActivity"></activity>
+        <activity android:name=".Views.ProfileActivity"></activity>
+        <activity android:name=".Views.SizeChooseActivity" />
         <activity android:name=".Views.CategoryChooseActivity" />
         <activity android:name=".Views.ChooseImageActivity" />
         <activity android:name=".Views.PostFormActivity" />

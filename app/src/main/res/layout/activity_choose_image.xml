@@ -157,18 +157,15 @@
                 <Button
                     android:id="@+id/chooseImageMarketPhotoBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/button_shadow"
+                    android:drawableLeft="@drawable/ic_photo_camera_white_24dp"
+                    android:paddingStart="128dp"
+                    android:paddingEnd="96dp"
                     android:text="@string/choose_image_market_photo_label"
                     android:textAllCaps="false"
                     android:textColor="@color/colorLightText" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/chooseImagePhotoMarketGrid"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp" />
 
                 <TextView
                     android:id="@+id/chooseImageSalePlaceLabel"
