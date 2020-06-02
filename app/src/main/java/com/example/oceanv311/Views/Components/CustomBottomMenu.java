@@ -12,6 +12,7 @@ import com.example.oceanv311.R;
 import com.example.oceanv311.Views.AppActivity;
 import com.example.oceanv311.Views.ChooseImageActivity;
 import com.example.oceanv311.Views.FeedActivity;
+import com.example.oceanv311.Views.ProfileActivity;
 
 public class CustomBottomMenu {
     private  AppCompatActivity activity;
@@ -53,11 +54,22 @@ public class CustomBottomMenu {
                 if(!activity.NAME.equals("ChooseImageActivity"))
                 {
                     activity.startActivity(new Intent(context, ChooseImageActivity.class));
+                    activity.finish();
                 }
             }
         });
         myRepostButton = view.findViewById(R.id.SimpleBottomMenuSavesBtn);
         profileButton = view.findViewById(R.id.SimpleBottomMenuProfileBtn);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!activity.NAME.equals("ProfileActivity"))
+                {
+                    activity.startActivity(new Intent(context, ProfileActivity.class));
+                    activity.finish();
+                }
+            }
+        });
     }
 
 

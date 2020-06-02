@@ -33,4 +33,8 @@
     <string name="choose_category">Выбрать категории</string>
     <string name="category_choose_item_default_text">#платьяотдаши</string>
     <string name="size_choose_toolbar_title">Выбрать размеры</string>
+    <string name="profile_post_label">товаров</string>
+    <string name="profile_category_label">категории</string>
+    <string name="profile_repost_label">репосты</string>
+    <string name="profile_description">Краткое описание</string>
 </resources>
