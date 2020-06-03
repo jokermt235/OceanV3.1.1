@@ -37,4 +37,11 @@
     <string name="profile_category_label">категории</string>
     <string name="profile_repost_label">репосты</string>
     <string name="profile_description">Краткое описание</string>
+    <string name="profile_settings_toolbar_title">Настройки</string>
+    <string name="profile_settings_social_link">Добавление | Удаление аккаунтов социальных сетей</string>
+    <string name="profile_settings_edit_link">Редактировать профиль</string>
+    <string name="profile_settings_place_link">Добавить | Удалить место</string>
+    <string name="profile_settings_friends_link">Поделиться с друзьями</string>
+    <string name="profile_settings_review_link">Оставить отзыв</string>
+    <string name="profile_settings_write_us_link">Написать нам</string>
 </resources>
