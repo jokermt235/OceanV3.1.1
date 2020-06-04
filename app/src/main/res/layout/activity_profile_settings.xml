@@ -70,8 +70,9 @@
                 <TextView
                     android:id="@+id/profileSettingsEditLink"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/profile_settings_edit_link"
                     android:textColor="@color/colorDarkText"
                     android:textStyle="bold" />
@@ -92,8 +93,9 @@
                 <TextView
                     android:id="@+id/profileSettingsPlaceLink"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/profile_settings_place_link"
                     android:textColor="@color/colorDarkText"
                     android:textStyle="bold" />
@@ -114,8 +116,9 @@
                 <TextView
                     android:id="@+id/profileSettingsShareLink"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/profile_settings_friends_link"
                     android:textColor="@color/colorDarkText"
                     android:textStyle="bold" />
@@ -136,8 +139,9 @@
                 <TextView
                     android:id="@+id/profileSettingsReviewLink"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/profile_settings_review_link"
                     android:textColor="@color/colorDarkText"
                     android:textStyle="bold" />
@@ -158,8 +162,9 @@
                 <TextView
                     android:id="@+id/profileSettingsWriteUsLink"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
                     android:text="@string/profile_settings_write_us_link"
                     android:textColor="@color/colorDarkText"
                     android:textStyle="bold" />

@@ -209,16 +209,5 @@
                 android:textColor="@color/colorLightText"
                 android:textSize="16sp" />
         </LinearLayout>
-        <Button
-            android:id="@+id/chooseImageSaveBtn"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_gravity="bottom"
-            android:background="@color/colorButton"
-            android:backgroundTint="@color/colorButton"
-            android:backgroundTintMode="src_over"
-            android:text="@string/app_save_text"
-            android:textColor="@color/colorLightText"
-            android:visibility="gone"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
