@@ -23,7 +23,8 @@
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:title="@string/place_form_toolbar_title" />
+            app:title="@string/place_form_toolbar_title"
+            app:titleTextColor="@color/colorDarkText" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,17 +39,19 @@
                 android:id="@+id/placeForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/choose_image_sale_place_label"
+                android:text="@string/place_marker_label"
                 android:textSize="12sp" />
 
             <EditText
-                android:id="@+id/placeFormName"
+                android:id="@+id/placeFormMarketName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="@string/market" />
+                android:text="@string/market"
+                android:textColor="@color/colorDarkText"
+                android:textColorLink="@color/colorLoginLabel" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,11 +70,12 @@
                         android:text="@string/user_row_label" />
 
                     <EditText
-                        android:id="@+id/placeRow"
+                        android:id="@+id/placeFormRow"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColorLink="@color/colorLoginLabel" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -79,18 +83,20 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:layout_marginEnd="16dp">
+
                     <TextView
-                        android:id="@+id/placePavilionLabel"
+                        android:id="@+id/placeFormPavilionLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/user_row_label" />
+                        android:text="@string/place_form_pavilion" />
 
                     <EditText
-                        android:id="@+id/placePavilion"
+                        android:id="@+id/placeFormPavilion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColorLink="@color/colorLoginLabel" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -99,17 +105,18 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/placeFloorLabel"
+                        android:id="@+id/placeFormFloorLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/user_floor" />
 
                     <EditText
-                        android:id="@+id/placeFloor"
+                        android:id="@+id/placeFormFloor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textColorLink="@color/colorLoginLabel" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -121,12 +128,13 @@
                 android:text="@string/user_wa_phone_label" />
 
             <EditText
-                android:id="@+id/placeWA"
+                android:id="@+id/placeFormWA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="phone"
+                android:textColorLink="@color/colorLoginLabel" />
 
             <TextView
                 android:id="@+id/placeTGLabel"
@@ -136,12 +144,13 @@
                 android:text="@string/user_tg_phone_label" />
 
             <EditText
-                android:id="@+id/placeTG"
+                android:id="@+id/placeFormTG"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="phone"
+                android:textColorLink="@color/colorLoginLabel" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/placeFormSaveBtn"
@@ -167,6 +176,22 @@
                 android:textAllCaps="true"
                 android:textColor="@color/colorLightText"
                 android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/placeFormProgressBar"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:indeterminateTint="@color/colorLightText"
+                android:maxWidth="24dp"
+                android:maxHeight="24dp"
+                android:minWidth="24dp"
+                android:minHeight="24dp"
+                android:visibility="gone"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/placeFormBottomMenuView"

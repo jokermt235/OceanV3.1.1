@@ -48,4 +48,5 @@
     <string name="profile_form_shop_name_label">Ваш магазин</string>
     <string name="place_form_toolbar_title">Новое место</string>
     <string name="place_form_pavilion">Павильон</string>
+    <string name="place_marker_label">Торговый центр</string>
 </resources>
