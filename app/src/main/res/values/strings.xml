@@ -46,4 +46,6 @@
     <string name="profile_settings_write_us_link">Написать нам</string>
     <string name="profile_form_name_label">Ваше имя</string>
     <string name="profile_form_shop_name_label">Ваш магазин</string>
+    <string name="place_form_toolbar_title">Новое место</string>
+    <string name="place_form_pavilion">Павильон</string>
 </resources>

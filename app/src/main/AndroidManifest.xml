@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Views.ProfileFormActivity"></activity>
+        <activity android:name=".Views.PlaceFormActivity"></activity>
+        <activity android:name=".Views.ProfileFormActivity" />
         <activity android:name=".Views.ProfilePlaceActivity" />
         <activity android:name=".Views.ProfileSettingsActivity" />
         <activity android:name=".Views.ProfileActivity" />
