@@ -5,10 +5,13 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.oceanv311.Adapters.ProfilePlaceAdapter;
 import com.example.oceanv311.Callbacks.OnFilterResult;
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class ProfilePlaceActivity extends AppActivity {
+    private static String TAG = "ProfilePlaceActivity";
     private LinearLayout bottomMenu;
     private Toolbar  toolbar;
     private FloatingActionButton addNewPlaceButton;
@@ -47,6 +51,16 @@ public class ProfilePlaceActivity extends AppActivity {
             }
         });
         profilePlaceList = findViewById(R.id.profilePlaceList);
+        profilePlaceList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), PlaceFormActivity.class);
+                TextView textViewUUID = (TextView)view.findViewById(R.id.profilePlaceItemUUID);
+                intent.putExtra("uid", (String)textViewUUID.getText());
+                Log.d(TAG, (String)textViewUUID.getText());
+                startActivity(intent);
+            }
+        });
         progressBar = findViewById(R.id.profilePlaceProgressBar);
     }
     @Override

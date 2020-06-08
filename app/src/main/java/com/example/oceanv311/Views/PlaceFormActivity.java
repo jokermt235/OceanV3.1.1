@@ -1,14 +1,21 @@
 package com.example.oceanv311.Views;
 
 import androidx.appcompat.widget.Toolbar;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
+import com.example.oceanv311.Callbacks.OnFilterResult;
 import com.example.oceanv311.Callbacks.PlaceForm.OnSaveClick;
+import com.example.oceanv311.Modules.SimpleLoader;
 import com.example.oceanv311.R;
 import com.example.oceanv311.Views.Components.CustomBottomMenu;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 
 public class PlaceFormActivity extends AppActivity {
@@ -23,6 +30,7 @@ public class PlaceFormActivity extends AppActivity {
     private EditText placeFormWAPhone;
     private EditText placeFormTGPhone;
     private ProgressBar progressBar;
+    private String path;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,9 +81,49 @@ public class PlaceFormActivity extends AppActivity {
         return progressBar;
     }
 
+    public void setPath(String path){
+        this.path = path;
+    }
+
+    public String getPath(){
+        return path;
+    }
+
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = getIntent();
+        try {
+            String uid = intent.getStringExtra("uid");
+            if(uid == null){
+                toolbar.setTitle("Новое место");
+            }else{
+                toolbar.setTitle(R.string.place_edit_toolbar_title);
+                SimpleLoader.filter("place","uid", uid, new OnFilterResult(){
+                    @Override
+                    public void onResult(ArrayList<Map<String, Object>> arrayList) {
+                        super.onResult(arrayList);
+                        if(!arrayList.isEmpty()){
+                            Map<String, Object> place = arrayList.get(0);
+                            placeFormFloor.setText((String)place.get("floor"));
+                            placeFormRow.setText((String)place.get("row"));
+                            placeFormMarketName.setText((String)place.get("market"));
+                            placeFormPavilion.setText((String)place.get("pavilion"));
+                            placeFormTGPhone.setText((String)place.get("TGPhone"));
+                            placeFormWAPhone.setText((String)place.get("WAPhone"));
+                            setPath((String)place.get("_ref"));
+                        }
+                    }
+                });
+            }
+        }catch (Exception e){
+
+        }
     }
 }

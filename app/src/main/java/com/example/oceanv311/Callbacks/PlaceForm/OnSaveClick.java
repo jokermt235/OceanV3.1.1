@@ -28,18 +28,38 @@ public class OnSaveClick implements View.OnClickListener {
         place.put("WAPhone", activity.getPlaceFormWAPhone().getText().toString());
         place.put("TGPhone", activity.getPlaceFormTGPhone().getText().toString());
         progressBar = activity.getProgressBar();
-        progressBar.setVisibility(View.VISIBLE);
-        SimpleLoader.save("place",place,new OnSavedResult(){
-            @Override
-            public void onSave(boolean result) {
-                super.onSave(result);
-                if(result){
-                    activity.startActivity(new Intent(activity.getApplicationContext(), ProfilePlaceActivity.class));
-                    progressBar.setVisibility(View.GONE);
-                    activity.finish();
+        if(activity.getPath() == null){
+            SimpleLoader.save("place",place,new OnSavedResult(){
+                @Override
+                public void onSave(boolean result) {
+                    super.onSave(result);
+                    if(result){
+                        activity.startActivity(new Intent(activity.getApplicationContext(), ProfilePlaceActivity.class));
+                        progressBar.setVisibility(View.GONE);
+                        activity.finish();
+                    }
                 }
+            });
+        }else{
+            try {
+                SimpleLoader.update("place",activity.getPath(),place,new OnUpdateDocument(){
+                    @Override
+                    public void updated(boolean status) {
+                        super.updated(status);
+                        if(status){
+                            activity.startActivity(new Intent(activity.getApplicationContext(), ProfilePlaceActivity.class));
+                            progressBar.setVisibility(View.GONE);
+                            activity.finish();
+                        }
+                    }
+                });
+            }catch (Exception e){
+                e.printStackTrace();
             }
-        });
+
+        }
+        progressBar.setVisibility(View.VISIBLE);
+
     }
 
     public OnSaveClick(PlaceFormActivity activity){

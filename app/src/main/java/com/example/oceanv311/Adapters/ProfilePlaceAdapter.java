@@ -1,6 +1,7 @@
 package com.example.oceanv311.Adapters;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,18 +45,22 @@ public class ProfilePlaceAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.profile_place_list_item, null);
             holder.placeList = convertView.findViewById(R.id.profilePlaceListItemTitle);
             holder.chevronIcon = convertView.findViewById(R.id.profilePlaceItemChevron);
+            holder.placeUUID = convertView.findViewById(R.id.profilePlaceItemUUID);
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder)convertView.getTag();
         }
-        String title = items.get(position).get("market").toString() + "рк , "+
+        holder.placeUUID.setText((String)items.get(position).get("uid"));
+        String title = items.get(position).get("market").toString() + " рк , "+
                 items.get(position).get("row").toString() + "р / " +
                 items.get(position).get("pavilion").toString() +  "п / " +
                 items.get(position).get("floor").toString()  + "э";
         holder.placeList.setText(title);
+        holder.chevronIcon.setImageBitmap(BitmapFactory.decodeResource(context.getResources(),R.mipmap.ic_profile_place_item_chevron_icon_foreground));
         return convertView;
     }
     static class ViewHolder{
+        TextView placeUUID;
         TextView placeList;
         ImageView chevronIcon;
     }
