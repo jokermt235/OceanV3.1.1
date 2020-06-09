@@ -9,12 +9,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 
+import com.example.oceanv311.Callbacks.ChooseImage.ChooseImageSaveClick;
+import com.example.oceanv311.Callbacks.OnFilterResult;
+import com.example.oceanv311.Modules.SimpleLoader;
 import com.example.oceanv311.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.apache.commons.lang3.StringUtils;
-
-import java.awt.font.TextAttribute;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class ChooseImageActivity extends AppActivity {
 
@@ -23,10 +32,16 @@ public class ChooseImageActivity extends AppActivity {
     private static int CATEGORY_REQUEST_CODE = 2;
     private static int SIZE_REQUEST_CODE = 3;
     private static int MIMAGE_REQUEST_CODE = 4;
+    private EditText chooseImageName;
+    private EditText chooseImagePrice;
+    private EditText chooseImagePriceSale;
+    private EditText chooseImageCloth;
     private EditText category;
     private EditText sizes;
     private ChooseImageActivity activity = this;
     private Button marketPhotoBtn;
+    private Spinner chooseImageSalePlace;
+    private LinearLayout postFormSaveBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +78,13 @@ public class ChooseImageActivity extends AppActivity {
                 startActivityForResult(Intent.createChooser(intent,"Select Picture"), MIMAGE_REQUEST_CODE);
             }
         });
+        chooseImageSalePlace = findViewById(R.id.chooseImageSalePlace);
+        chooseImageName = findViewById(R.id.chooseImageName);
+        chooseImagePrice =  findViewById(R.id.chooseImagePrice);
+        chooseImagePriceSale = findViewById(R.id.chooseImagePriceSale);
+        chooseImageCloth = findViewById(R.id.chooseImageCloth);
+        postFormSaveBtn = findViewById(R.id.postFormSaveBtn);
+        postFormSaveBtn.setOnClickListener(new ChooseImageSaveClick(this));
     }
 
     @Override
@@ -89,5 +111,44 @@ public class ChooseImageActivity extends AppActivity {
                 sizes.setText(data.getStringExtra("checkedItems"));
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initDefaults();
+    }
+
+    public EditText getChooseImageName(){
+        return chooseImageName;
+    }
+
+    public EditText getChooseImagePrice(){
+        return chooseImagePrice;
+    }
+
+    public EditText getChooseImagePriceSale(){
+        return  chooseImagePriceSale;
+    }
+
+    public EditText getChooseImageCloth(){
+        return chooseImageCloth;
+    }
+
+    private void initDefaults(){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user  = FirebaseAuth.getInstance().getCurrentUser();
+        SimpleLoader.filter("place","phone", user.getPhoneNumber(), new OnFilterResult(){
+            @Override
+            public void onResult(ArrayList<Map<String, Object>> arrayList) {
+                super.onResult(arrayList);
+                if(!arrayList.isEmpty()){
+                    SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), arrayList, android.R.layout.simple_list_item_1,
+                            new String[]{"name"},
+                            new int[]{android.R.id.text1});
+                    chooseImageSalePlace.setAdapter(adapter);
+                }
+            }
+        });
     }
 }

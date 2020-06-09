@@ -27,6 +27,11 @@ public class OnSaveClick implements View.OnClickListener {
         place.put("floor", activity.getPlaceFormFloor().getText().toString());
         place.put("WAPhone", activity.getPlaceFormWAPhone().getText().toString());
         place.put("TGPhone", activity.getPlaceFormTGPhone().getText().toString());
+        String name = place.get("market").toString() + " рк , "+
+                place.get("row").toString() + "р / " +
+                place.get("pavilion").toString() +  "п / " +
+                place.get("floor").toString()  + "э";
+        place.put("name", name);
         progressBar = activity.getProgressBar();
         if(activity.getPath() == null){
             SimpleLoader.save("place",place,new OnSavedResult(){
