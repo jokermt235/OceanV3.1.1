@@ -109,9 +109,9 @@ public class ChooseImageActivity extends AppActivity {
                     }
 
                 }else  if(data.getData() != null){
-                    Log.d(NAME, "The single data chosen");
+                    Log.d(NAME, data.getData().toString());
                     images = new ArrayList<>();
-                    images.add(Uri.parse(data.getData().getPath()));
+                    images.add(data.getData());
                 }
             }
         }
@@ -128,7 +128,7 @@ public class ChooseImageActivity extends AppActivity {
                 }else  if(data.getData() != null){
                     Log.d(NAME, "The single data chosen");
                     marketImages = new ArrayList<>();
-                    marketImages.add(Uri.parse(data.getData().getPath()));
+                    marketImages.add(data.getData());
                 }
             }
         }

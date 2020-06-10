@@ -1,5 +1,6 @@
 package com.example.oceanv311.Callbacks.ChooseImage;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -11,6 +12,7 @@ import com.example.oceanv311.Callbacks.OnSavedResult;
 import com.example.oceanv311.Modules.ImageUploader;
 import com.example.oceanv311.Modules.SimpleLoader;
 import com.example.oceanv311.Views.ChooseImageActivity;
+import com.example.oceanv311.Views.FeedActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,14 +44,12 @@ public class ChooseImageSaveClick implements View.OnClickListener {
                 super.onSave(result, documentId, uid);
                 if(result && documentId != null){
                     ArrayList<Bitmap> images = new ArrayList<>();
-                    Log.d(TAG, activity.getImages().toString());
                     for(Uri image: activity.getImages()){
                         try {
                             images.add(getBitmapFromUri(image));
                         }catch (IOException e){
                             e.printStackTrace();
                         }
-
                     }
                     ImageUploader.uploadImages("post",images,uid);
                     ArrayList<Bitmap> marketImages = new ArrayList<>();
@@ -59,10 +59,11 @@ public class ChooseImageSaveClick implements View.OnClickListener {
                         }catch (IOException e){
                             e.printStackTrace();
                         }
-
                     }
                     ImageUploader.uploadImages("post_market",marketImages,uid);
                     activity.getProgressBar().setVisibility(View.GONE);
+                    activity.startActivity(new Intent(activity.getApplicationContext(), FeedActivity.class));
+                    activity.finish();
                 }
             }
         });
