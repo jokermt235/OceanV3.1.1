@@ -209,6 +209,21 @@
                 android:textAllCaps="true"
                 android:textColor="@color/colorLightText"
                 android:textSize="16sp" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:indeterminateTint="@color/colorLightText"
+                android:maxWidth="24dp"
+                android:maxHeight="24dp"
+                android:minWidth="24dp"
+                android:minHeight="24dp"
+                android:visibility="gone"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

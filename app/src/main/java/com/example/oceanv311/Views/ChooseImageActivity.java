@@ -4,12 +4,15 @@ import androidx.annotation.Nullable;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 
@@ -19,6 +22,7 @@ import com.example.oceanv311.Modules.SimpleLoader;
 import com.example.oceanv311.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.TwitterAuthCredential;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.apache.commons.lang3.StringUtils;
@@ -42,6 +46,9 @@ public class ChooseImageActivity extends AppActivity {
     private Button marketPhotoBtn;
     private Spinner chooseImageSalePlace;
     private LinearLayout postFormSaveBtn;
+    private ArrayList<Uri> images = new ArrayList<>();
+    private ArrayList<Uri> marketImages = new ArrayList<>();
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +92,7 @@ public class ChooseImageActivity extends AppActivity {
         chooseImageCloth = findViewById(R.id.chooseImageCloth);
         postFormSaveBtn = findViewById(R.id.postFormSaveBtn);
         postFormSaveBtn.setOnClickListener(new ChooseImageSaveClick(this));
+        progressBar  = findViewById(R.id.progressBar);
     }
 
     @Override
@@ -93,7 +101,34 @@ public class ChooseImageActivity extends AppActivity {
         if(requestCode == GALLERY_REQUEST_CODE){
             if(resultCode  == Activity.RESULT_OK){
                 if(data.getClipData() != null){
+                    int n = data.getClipData().getItemCount();
+                    Log.d(NAME, data.getClipData().toString());
+                    images = new ArrayList<>();
+                    for(int i=0;i < n;i++){
+                        images.add(data.getClipData().getItemAt(i).getUri());
+                    }
 
+                }else  if(data.getData() != null){
+                    Log.d(NAME, "The single data chosen");
+                    images = new ArrayList<>();
+                    images.add(Uri.parse(data.getData().getPath()));
+                }
+            }
+        }
+
+        if(requestCode == MIMAGE_REQUEST_CODE){
+            if(resultCode  == Activity.RESULT_OK){
+                if(data.getClipData() != null){
+                    int n = data.getClipData().getItemCount();
+                    Log.d(NAME, data.getClipData().toString());
+                    marketImages = new ArrayList<>();
+                    for(int i=0;i < n;i++){
+                        marketImages.add(data.getClipData().getItemAt(i).getUri());
+                    }
+                }else  if(data.getData() != null){
+                    Log.d(NAME, "The single data chosen");
+                    marketImages = new ArrayList<>();
+                    marketImages.add(Uri.parse(data.getData().getPath()));
                 }
             }
         }
@@ -103,7 +138,6 @@ public class ChooseImageActivity extends AppActivity {
                 Log.d(NAME,data.getStringArrayExtra("checkedItems").toString());
                 String cats = StringUtils.join(data.getStringArrayExtra("checkedItems"), ',');
                 category.setText(cats);
-                Log.d(NAME, cats);
             }
         }
         if(requestCode == SIZE_REQUEST_CODE){
@@ -117,6 +151,14 @@ public class ChooseImageActivity extends AppActivity {
     protected void onResume() {
         super.onResume();
         initDefaults();
+    }
+
+    public ArrayList<Uri> getImages(){
+        return images;
+    }
+
+    public  ArrayList<Uri> getMarketImages(){
+        return marketImages;
     }
 
     public EditText getChooseImageName(){
@@ -133,6 +175,18 @@ public class ChooseImageActivity extends AppActivity {
 
     public EditText getChooseImageCloth(){
         return chooseImageCloth;
+    }
+
+    public EditText getCategory(){
+        return  category;
+    }
+
+    public EditText getSizes(){
+        return  sizes;
+    }
+
+    public ProgressBar getProgressBar(){
+        return progressBar;
     }
 
     private void initDefaults(){

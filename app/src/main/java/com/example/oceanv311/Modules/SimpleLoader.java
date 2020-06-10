@@ -48,12 +48,14 @@ public class SimpleLoader {
                     });
         }
     }
-    public static void save(final  String collection, Map<String, Object> data, final OnSavedResult result){
+    public static void save(final  String collection, final Map<String, Object> data, final OnSavedResult result){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user  = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null) {
             data.put("phone",user.getPhoneNumber());
-            data.put("name",data.get("name"));
+            if(data.get("name") != null) {
+                data.put("name", data.get("name"));
+            }
             data.put("added", new Date().getTime());
             data.put("uid", UUID.randomUUID().toString());
             db.collection(collection)
@@ -62,7 +64,7 @@ public class SimpleLoader {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                            result.onSave(true);
+                            result.onSave(true, documentReference.getId(), data.get("uid").toString());
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -73,7 +75,6 @@ public class SimpleLoader {
                     });
         }
     }
-
 
     public static void filter(final  String collection, final OnFilterResult result){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
