@@ -19,14 +19,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
+
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/feedListItemAva"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
                     app:srcCompat="@drawable/googleg_standard_color_18" />
 
                 <LinearLayout
@@ -38,23 +43,94 @@
                         android:id="@+id/feedListItemMarket"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:text="@string/market"
                         android:textColor="@color/colorDarkText"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/feedListItemPlace"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:text="@string/choose_image_sale_place_label"
                         android:textColor="@color/colorDarkText" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
                 android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/feedListItemWABtn"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    app:srcCompat="@mipmap/ic_whats_app_icon_foreground" />
+
+                <ImageView
+                    android:id="@+id/feedListItemTGBtn"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    app:srcCompat="@mipmap/ic_telegram_icon_foreground" />
+
+                <ImageView
+                    android:id="@+id/feedListItemMoreBtn"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    app:srcCompat="@mipmap/ic_more_vertical_icon_foreground" />
             </LinearLayout>
+        </LinearLayout>
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/feedListItemImageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderCircularHandlerEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true" />
+
+        <LinearLayout
+            android:id="@+id/feedListItemSocialShareBtn"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@color/colorButton"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/feed_list_item_share_button_text"
+                android:textColor="@color/colorLightText"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                app:srcCompat="@mipmap/ic_hailer_vertical_icon_foreground" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
