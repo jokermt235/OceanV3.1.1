@@ -61,7 +61,7 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
             super(view);
             shop = view.findViewById(R.id.feedListItemMarket);
             place = view.findViewById(R.id.feedListItemPlace);
-            name  = view.findViewById(R.id.feedLIstItem);
+            name  = view.findViewById(R.id.feedListItemInfoName);
         }
     }
 }
