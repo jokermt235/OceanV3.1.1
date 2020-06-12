@@ -5,11 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oceanv311.R;
+import com.smarteist.autoimageslider.SliderView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -20,7 +24,7 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
     @NonNull
     @Override
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(context).inflate(R.layout.size_choose_list_item,parent,false);
+            View view = LayoutInflater.from(context).inflate(R.layout.feed_list_item,parent,false);
             return new VH(view);
     }
 
@@ -44,13 +48,20 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
             this.context = context;
     }
     public static class VH extends   RecyclerView.ViewHolder{
-        private CheckBox checkBox;
-        private View view;
+        private TextView shop;
+        private TextView place;
+        private TextView name;
+        private TextView size;
+        private TextView cloth;
+        private TextView price;
+        private TextView priceSale;
+        private SliderView images;
 
         public VH(View view) {
             super(view);
-            this.view = view;
-            this.checkBox = view.findViewById(R.id.sizeChooseListItemCheckbox);
+            shop = view.findViewById(R.id.feedListItemMarket);
+            place = view.findViewById(R.id.feedListItemPlace);
+            name  = view.findViewById(R.id.feedLIstItem);
         }
     }
 }
