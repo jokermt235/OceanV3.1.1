@@ -25,11 +25,12 @@
             app:title="@string/appName"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
             app:titleTextColor="@color/colorToolbarTitle" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/feedPostView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
         <LinearLayout
             android:orientation="vertical"
             android:id="@+id/feedBottomMenuView"

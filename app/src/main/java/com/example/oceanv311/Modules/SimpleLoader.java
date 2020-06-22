@@ -90,7 +90,6 @@ public class SimpleLoader {
                         QuerySnapshot querySnapshot = task.getResult();
                         for (QueryDocumentSnapshot document : querySnapshot) {
                             arrayList.add(document.getData());
-                            Log.d(TAG, document.getData().toString());
                         }
                         result.onResult(arrayList);
                     } else {

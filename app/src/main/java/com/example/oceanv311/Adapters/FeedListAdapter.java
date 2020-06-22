@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
+    private static  String TAG = "FeedListAdapter";
     private ArrayList<Map<String,Object>> items = new ArrayList();
     private Context context;
     @NonNull
@@ -30,7 +31,13 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
 
     @Override
     public void onBindViewHolder(@NonNull VH holder, final int position) {
-
+        holder.name.setText((String)items.get(position).get("name"));
+        holder.shop.setText((String)items.get(position).get("shop"));
+        holder.place.setText((String)items.get(position).get("place"));
+        holder.cloth.setText((String)items.get(position).get("cloth"));
+        holder.size.setText((String)items.get(position).get("sizes"));
+        holder.price.setText(Long.toString((long)items.get(position).get("price")));
+        holder.priceSale.setText(Long.toString((long)items.get(position).get("priceSale")));
     }
 
     @Override
@@ -59,9 +66,14 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
 
         public VH(View view) {
             super(view);
-            shop = view.findViewById(R.id.feedListItemMarket);
-            place = view.findViewById(R.id.feedListItemPlace);
-            name  = view.findViewById(R.id.feedListItemInfoName);
+            shop      = view.findViewById(R.id.feedListItemMarket);
+            place     = view.findViewById(R.id.feedListItemPlace);
+            name      = view.findViewById(R.id.feedListItemInfoName);
+            size      = view.findViewById(R.id.feedListItemInfoSize);
+            cloth     = view.findViewById(R.id.feedListItemInfoCloth);
+            price     = view.findViewById(R.id.feedListItemInfoPrice);
+            priceSale = view.findViewById(R.id.feedListItemInfoPriceSale);
+            images    = view.findViewById(R.id.feedListItemImageSlider);
         }
     }
 }

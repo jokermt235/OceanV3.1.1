@@ -189,6 +189,10 @@ public class ChooseImageActivity extends AppActivity {
         return progressBar;
     }
 
+    public Spinner getChooseImageSalePlace() {
+        return chooseImageSalePlace;
+    }
+
     private void initDefaults(){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user  = FirebaseAuth.getInstance().getCurrentUser();

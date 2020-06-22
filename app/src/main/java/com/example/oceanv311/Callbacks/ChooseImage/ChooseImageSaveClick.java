@@ -7,6 +7,8 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewOutlineProvider;
+import android.widget.SimpleAdapter;
+import android.widget.SpinnerAdapter;
 
 import com.example.oceanv311.Callbacks.OnSavedResult;
 import com.example.oceanv311.Modules.ImageUploader;
@@ -35,6 +37,10 @@ public class ChooseImageSaveClick implements View.OnClickListener {
         post.put("cloth", activity.getChooseImageCloth().getText().toString());
         post.put("categories", activity.getCategory().getText().toString());
         post.put("sizes", activity.getSizes().getText().toString());
+        int pos = activity.getChooseImageSalePlace().getSelectedItemPosition();
+        SpinnerAdapter adapter = activity.getChooseImageSalePlace().getAdapter();
+        Map<String, Object> map = (Map<String,Object>)adapter.getItem(pos);
+        post.put("place", map.get("name"));
         post.put("posted", true);
         post.put("re_posted", false);
         post.put("new", true);
