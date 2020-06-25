@@ -7,36 +7,39 @@
     android:nestedScrollingEnabled="false"
     tools:context=".Views.FeedActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/feedToolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorToolbar"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/appName"
-        app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
-        app:titleTextColor="@color/colorToolbarTitle" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/feedPostView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/feedToolbar"
-        app:layout_constraintBottom_toTopOf="@id/feedBottomMenuView"/>
-
     <LinearLayout
-        android:id="@+id/feedBottomMenuView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/feedToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorToolbar"
+            android:minHeight="?attr/actionBarSize"
+            android:nestedScrollingEnabled="false"
+            android:theme="?attr/actionBarTheme"
+            app:title="@string/appName"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+            app:titleTextColor="@color/colorToolbarTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feedPostView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:nestedScrollingEnabled="false" />
+
+        <LinearLayout
+            android:id="@+id/feedBottomMenuView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="vertical"></LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

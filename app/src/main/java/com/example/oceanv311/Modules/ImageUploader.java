@@ -17,7 +17,7 @@ import java.util.UUID;
 
 public class ImageUploader {
     private static String TAG = "UploadImage";
-    public static void uploadImages(String collection , ArrayList<Bitmap> images, String uid){
+    public static void uploadImages(String collection , String uid,  ArrayList<Bitmap> images){
         FirebaseStorage storage = FirebaseStorage.getInstance();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 

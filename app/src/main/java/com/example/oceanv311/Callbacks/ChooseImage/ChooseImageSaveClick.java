@@ -57,7 +57,7 @@ public class ChooseImageSaveClick implements View.OnClickListener {
                             e.printStackTrace();
                         }
                     }
-                    ImageUploader.uploadImages("post",images,uid);
+                    ImageUploader.uploadImages("post",uid, images);
                     ArrayList<Bitmap> marketImages = new ArrayList<>();
                     for(Uri image: activity.getMarketImages()){
                         try {
@@ -66,7 +66,7 @@ public class ChooseImageSaveClick implements View.OnClickListener {
                             e.printStackTrace();
                         }
                     }
-                    ImageUploader.uploadImages("post_market",marketImages,uid);
+                    ImageUploader.uploadImages("post_market",uid, marketImages);
                     activity.getProgressBar().setVisibility(View.GONE);
                     activity.startActivity(new Intent(activity.getApplicationContext(), FeedActivity.class));
                     activity.finish();

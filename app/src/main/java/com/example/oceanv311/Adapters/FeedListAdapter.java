@@ -1,6 +1,7 @@
 package com.example.oceanv311.Adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.oceanv311.Callbacks.Image.OnImageDownloadResult;
+import com.example.oceanv311.Modules.SimpleImageLoader;
 import com.example.oceanv311.R;
 import com.smarteist.autoimageslider.SliderView;
 
@@ -30,7 +34,7 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VH holder, final int position) {
+    public void onBindViewHolder(@NonNull final VH holder, final int position) {
         holder.name.setText((String)items.get(position).get("name"));
         holder.shop.setText((String)items.get(position).get("shop"));
         holder.place.setText((String)items.get(position).get("place"));
@@ -38,6 +42,12 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
         holder.size.setText((String)items.get(position).get("sizes"));
         holder.price.setText(Long.toString((long)items.get(position).get("price")));
         holder.priceSale.setText(Long.toString((long)items.get(position).get("priceSale")));
+        SimpleImageLoader.loadImages("post", (String) items.get(position).get("uid"), new OnImageDownloadResult(){
+            @Override
+            public void onResult(ArrayList<Bitmap> items) {
+                super.onResult(items);
+            }
+        });
     }
 
     @Override
