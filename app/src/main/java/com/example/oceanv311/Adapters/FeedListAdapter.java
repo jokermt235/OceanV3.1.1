@@ -2,10 +2,13 @@ package com.example.oceanv311.Adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,8 +49,12 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
             @Override
             public void onResult(ArrayList<Bitmap> items) {
                 super.onResult(items);
+                Log.d(TAG, items.toString());
+                //holder.images.setSliderAdapter();
+                holder.images.setSliderAdapter(new FeedImageAdapter(context, items));
             }
         });
+        holder.buttonWA.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.common_full_open_on_phone));
     }
 
     @Override
@@ -73,17 +80,23 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
         private TextView price;
         private TextView priceSale;
         private SliderView images;
+        private ImageView buttonWA;
+        private ImageView buttonTG;
+        private ImageView buttonMore;
 
         public VH(View view) {
             super(view);
-            shop      = view.findViewById(R.id.feedListItemMarket);
-            place     = view.findViewById(R.id.feedListItemPlace);
-            name      = view.findViewById(R.id.feedListItemInfoName);
-            size      = view.findViewById(R.id.feedListItemInfoSize);
-            cloth     = view.findViewById(R.id.feedListItemInfoCloth);
-            price     = view.findViewById(R.id.feedListItemInfoPrice);
-            priceSale = view.findViewById(R.id.feedListItemInfoPriceSale);
-            images    = view.findViewById(R.id.feedListItemImageSlider);
+            shop       = view.findViewById(R.id.feedListItemMarket);
+            place      = view.findViewById(R.id.feedListItemPlace);
+            name       = view.findViewById(R.id.feedListItemInfoName);
+            size       = view.findViewById(R.id.feedListItemInfoSize);
+            cloth      = view.findViewById(R.id.feedListItemInfoCloth);
+            price      = view.findViewById(R.id.feedListItemInfoPrice);
+            priceSale  = view.findViewById(R.id.feedListItemInfoPriceSale);
+            images     = view.findViewById(R.id.feedListItemImageSlider);
+            buttonWA   = view.findViewById(R.id.feedListItemWABtn);
+            buttonTG   = view.findViewById(R.id.feedListItemTGBtn);
+            buttonMore = view.findViewById(R.id.feedListItemMoreBtn);
         }
     }
 }

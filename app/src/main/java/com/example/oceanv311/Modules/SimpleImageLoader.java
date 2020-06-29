@@ -31,7 +31,7 @@ public class SimpleImageLoader {
                         if (item != null) {
                             iRef = item;
                             if (iRef != null) {
-                                final long ONE_MEGABYTE = 1024 * 1024;
+                                final long ONE_MEGABYTE = 1024 * 1024 * 50;
                                 iRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
                                     @Override
                                     public void onSuccess(byte[] bytes) {

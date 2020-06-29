@@ -19,9 +19,9 @@ public class ImageUploader {
     private static String TAG = "UploadImage";
     public static void uploadImages(String collection , String uid,  ArrayList<Bitmap> images){
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
         for (Bitmap bitmap:images) {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             byte[] data = baos.toByteArray();
             StorageReference storageRef = storage.getReference().child(collection + "/" + uid + "/" + UUID.randomUUID().toString() + ".jpeg");
