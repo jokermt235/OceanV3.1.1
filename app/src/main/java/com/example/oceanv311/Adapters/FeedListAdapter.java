@@ -54,7 +54,10 @@ public class FeedListAdapter extends RecyclerView.Adapter<FeedListAdapter.VH> {
                 holder.images.setSliderAdapter(new FeedImageAdapter(context, items));
             }
         });
-        holder.buttonWA.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.common_full_open_on_phone));
+        //holder.buttonWA.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_whats_app_icon_foreground));
+        //holder.buttonTG.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_telegram_icon_foreground));
+        //holder.buttonMore.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_more_vertical_icon_foreground));
+        holder.shop.setText(context.getString(R.string.market));
     }
 
     @Override

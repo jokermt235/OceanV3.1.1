@@ -22,7 +22,6 @@ import com.example.oceanv311.Modules.SimpleLoader;
 import com.example.oceanv311.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.TwitterAuthCredential;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.apache.commons.lang3.StringUtils;

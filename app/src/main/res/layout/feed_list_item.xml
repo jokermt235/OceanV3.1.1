@@ -23,7 +23,6 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="64dp"
-                android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -31,8 +30,8 @@
                     android:id="@+id/feedListItemAva"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:layout_marginStart="16dp"
-                    app:srcCompat="@drawable/googleg_standard_color_18" />
+                    android:layout_marginStart="8dp"
+                    android:background="@mipmap/ic_launcher_foreground" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -46,6 +45,7 @@
                         android:layout_marginStart="8dp"
                         android:text="@string/market"
                         android:textColor="@color/colorDarkText"
+                        android:textSize="12sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -54,7 +54,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="@string/choose_image_sale_place_label"
-                        android:textColor="@color/colorDarkText" />
+                        android:textColor="@color/colorDarkText"
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -67,21 +68,23 @@
 
                 <ImageView
                     android:id="@+id/feedListItemWABtn"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    app:srcCompat="@mipmap/ic_whats_app_icon_foreground" />
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@mipmap/ic_hailer_vertical_icon_foreground" />
 
                 <ImageView
                     android:id="@+id/feedListItemTGBtn"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    app:srcCompat="@mipmap/ic_telegram_icon_foreground" />
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@mipmap/ic_tg_icon_foreground" />
 
                 <ImageView
                     android:id="@+id/feedListItemMoreBtn"
-                    android:layout_width="64dp"
+                    android:layout_width="48dp"
                     android:layout_height="48dp"
-                    app:srcCompat="@mipmap/ic_more_vertical_icon_foreground" />
+                    android:background="@mipmap/ic_more_vertical_icon_foreground"
+                    android:backgroundTintMode="src_over"
+                    android:scaleType="center" />
             </LinearLayout>
         </LinearLayout>
 
@@ -130,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/ic_hailer_vertical_icon_foreground" />
+                android:background="@mipmap/ic_hailer_icon_foreground" />
         </LinearLayout>
 
         <LinearLayout
